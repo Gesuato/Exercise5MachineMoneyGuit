@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
                         if (j == slotValues[0][i] && j == slotValues[1][i] && j == slotValues[2][i]) {
                             System.out.println("vertical = " + formatedResult(j));
                             score = formatedResult(j);
-                            textViewResult.setText(Integer.toString(score));
+
                         }
 
                         if (j == slotValues[i][0] && j == slotValues[i][1] && j == slotValues[i][2]) {
                             System.out.println("Horizontal = " + formatedResult(slotValues[i][0]));
                             score = formatedResult(j);
-                            textViewResult.setText(Integer.toString(score));
+
                         }
                     }
 
@@ -97,13 +97,12 @@ public class MainActivity extends AppCompatActivity {
                     if( i == slotValues[0][0] && i == slotValues[1][1] && i == slotValues[2][2]){
                         System.out.println("Diagonal Esquerda = " + formatedResult(i));
                         score = formatedResult(i);
-                        textViewResult.setText(Integer.toString(score));
+
                     }
 
                     if (i == slotValues[0][2] && i == slotValues[1][1] && i == slotValues[2][0]){
                         System.out.println("Diagonal Direita = " + formatedResult(i));
                         score = formatedResult(i);
-                        textViewResult.setText(Integer.toString(score));
                     }
                 }
                 rollImage();
@@ -237,6 +236,8 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationEnd(DynamicAnimation animation, boolean canceled, float value, float velocity) {
          if(rollImageNumber[0] < 3){
              anim1Image1.start();
+         }else{
+             textViewResult.setText(Integer.toString(score));
          }
          rollImageNumber[0]++;
 
