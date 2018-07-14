@@ -1,12 +1,13 @@
 package com.cryptog.exercise5machinemoney;
 
-import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -14,39 +15,32 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private int[][] slotValues = new int[3][3];
-    private TextView[][] texts = new TextView[3][3];
+    private ImageView[][] tableImages = new ImageView[3][3];
     private Button btnGo;
     private int score = 0;
     private TextView textViewResult;
-
-    private String[] letters = new String[] {"A","K","Q","J"};
-
+    private Drawable[] imagesResult;
     private int [] points = new int[]{100,20,5,1};
-
-    private int[] colorLetters;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        colorLetters = new int[]{
-        ContextCompat.getColor(this, R.color.ColorA),ContextCompat.getColor(this, R.color.ColorK),
-        ContextCompat.getColor(this, R.color.ColorQ),ContextCompat.getColor(this, R.color.ColorJ)
-        };
+        imagesResult = new Drawable[]{ContextCompat.getDrawable(this,R.drawable.rabbitfacingright),ContextCompat.getDrawable(this,R.drawable.elephantfacingright),
+                ContextCompat.getDrawable(this,R.drawable.dromedaryfacingright),ContextCompat.getDrawable(this,R.drawable.deerfacingright)};
+
 
         int[] textViewIds = new int[]{
-                R.id.textView0,
-                R.id.textView1,
-                R.id.textView2,
-                R.id.textView3,
-                R.id.textView4,
-                R.id.textView5,
-                R.id.textView6,
-                R.id.textView7,
-                R.id.textView8
+                R.id.imageView0,
+                R.id.imageView1,
+                R.id.imageView2,
+                R.id.imageView3,
+                R.id.imageView4,
+                R.id.imageView5,
+                R.id.imageView6,
+                R.id.imageView7,
+                R.id.imageView8
         };
 
         textViewResult = findViewById(R.id.textViewResult);
@@ -54,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         // Linkando as referencias no textView
         for(int i = 0;i < 3;i++){
             for(int j = 0;j < 3;j++){
-                texts[i][j] = findViewById(textViewIds[3*i + j]);
+                tableImages[i][j] = findViewById(textViewIds[3*i + j]);
             }
         }
 
@@ -73,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 // Setando os valores randomicos nos textView
                 for(int i = 0;i < 3;i++) {
                     for (int j = 0; j < 3; j++) {
-                        texts[i][j].setTextColor(formatedColor(slotValues[i][j]));
-                        texts[i][j].setText(formatedLetre(slotValues[i][j]));
+                        tableImages[i][j].setImageDrawable(formatedImage(slotValues[i][j]));
+//                        texts[i][j].setText(formatedLetre(slotValues[i][j]));
                     }
                 }
 
@@ -121,11 +115,9 @@ public class MainActivity extends AppCompatActivity {
     return score + points[i] ;
 
     }
-    public String formatedLetre(int numeber){
-        return letters[numeber];
+    public Drawable formatedImage(int numeber){
+        return imagesResult[numeber];
     }
 
-    public int formatedColor(int index){
-        return colorLetters[index];
-    }
+
 }

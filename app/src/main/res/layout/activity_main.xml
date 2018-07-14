@@ -24,60 +24,58 @@
 
             >
 
-            <TextView
-                android:id="@+id/textView0"
-                android:gravity="center"
-                style="@style/styleTable"/>
 
-            <TextView
-                android:id="@+id/textView1"
-                android:gravity="center"
-                style="@style/styleTable"/>
+            <ImageView
+                android:id="@+id/imageView0"
+                style="@style/imagesMachine"
+                />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:gravity="center"
-                style="@style/styleTable" />
+            <ImageView
+                android:id="@+id/imageView1"
+                style="@style/imagesMachine"
+                 />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                style="@style/imagesMachine"
+                 />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <ImageView
+                android:id="@+id/imageView3"
+                style="@style/imagesMachine"
+                 />
+            <ImageView
+                android:id="@+id/imageView4"
+                style="@style/imagesMachine"
+                 />
+            <ImageView
+                android:id="@+id/imageView5"
+                style="@style/imagesMachine"
+                 />
+
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-            <TextView
-                android:id="@+id/textView3"
-                android:gravity="center"
-                style="@style/styleTable"/>
+            <ImageView
+                android:id="@+id/imageView6"
+                style="@style/imagesMachine"
+                 />
+            <ImageView
+                android:id="@+id/imageView7"
+                style="@style/imagesMachine"
+                 />
+            <ImageView
+                android:id="@+id/imageView8"
+                style="@style/imagesMachine"
+                />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:gravity="center"
-                style="@style/styleTable" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:gravity="center"
-                style="@style/styleTable"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/textView6"
-                android:gravity="center"
-                style="@style/styleTable"/>
-
-            <TextView
-                android:id="@+id/textView7"
-                android:gravity="center"
-                style="@style/styleTable" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:gravity="center"
-                style="@style/styleTable" />
         </TableRow>
 
     </TableLayout>
